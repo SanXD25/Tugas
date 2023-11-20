@@ -1,21 +1,34 @@
 package id.infinitelearning.KotlinSubmission.exercise4
 
-fun main(args: Array<String>) {
+import java.io.BufferedReader
+import java.io.FileReader
+import java.io.FileNotFoundException
+import java.io.IOException
+
+fun main() {
+
+/**
+ * Buatlah contoh code penggunaan try catch untuk menangani suatu kasus sesuai keinginan teman-teman
+ *
+ */
+// Buat di bawah sini
 
 
-    /**
-     * Buatlah contoh code penggunaan try catch untuk menangani suatu kasus sesuai keinginan teman-teman
-     *
-     */
-    // Buat di bawah sini
+    try {
+        val fileName = "file_rahasia:v.txt" // muehehehe:)
+        val reader = BufferedReader(FileReader(fileName))
 
-    val str = "abc"
-    val a: Int = try {
-        str.toInt()
-    } catch (e: NumberFormatException) {
-        -1
+        var line: String?
+
+        while (reader.readLine().also { line = it } != null) {
+            println(line)
+        }
+
+        reader.close()
+    } catch (e: FileNotFoundException) {
+        println("File tidak ditemukan: ${e.message}")
+    } catch (e: IOException) {
+        println("Terjadi kesalahan saat membaca file: ${e.message}")
     }
-    println(a)
-
 }
 

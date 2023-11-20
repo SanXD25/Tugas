@@ -16,28 +16,23 @@ fun main() {
     - Isi variabel result dengan nilai: 'Anda mendapatkan nilai E.'
      */
     // Buat di bawah sini
-    println("Masukan score :")
-    val score = readln()?.toIntOrNull()
 
-    if (score != null) {
+    val score = 90 // Bismillah nilai saya:v
 
-        if (score >= 90){
-            var result = "Selamat! Anda mendapatkan nilai A."
-            println(result)
-        } else if (80 <= 89){
-            var result = "Anda mendapatkan nilai B."
-            println(result)
-        } else if (70 <= 79){
-            var result = "Anda mendapatkan nilai C."
-            println(result)
-        } else if (60 <= 69){
-            var result = "Anda mendapatkan nilai D."
-            println(result)
-        } else if (score < 60){
-            var result = "Anda mendapatkan nilai E."
-            println(result)
-        }
+    var result = ""
+
+    if (score >= 90) {
+        result = "Selamat! Anda mendapatkan nilai A."
+    } else if (score in 80..89) {
+        result = "Anda mendapatkan nilai B."
+    } else if (score in 70..79) {
+        result = "Anda mendapatkan nilai C."
+    } else if (score in 60..69) {
+        result = "Anda mendapatkan nilai D."
+    } else {
+        result = "Anda mendapatkan nilai E."
     }
 
+    println(result)
 
 }
